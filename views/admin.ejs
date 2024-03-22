@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('_link') %>
+    <title><%= title %></title>
+</head>
+<body>
+    <%- include('_nav') %>
+    <div class="container">
+        <h2 class="my-3gaa" style="text-align: center;">Welcome to admin page</h2>
+        <div class="d-flex justify-content-center my-3">
+            <a href="/admin/addProduct"><button class=" btn btn-primary">Add Product</button></a>
+        </div>
+        <div>
+          <% if (deleted) { %>
+           <p style="color: red; text-align: center;"><%= `product with name ${deleted} has been deleted` %></p>
+          <% } %>
+        </div>
+        <table class="table">
+            <thead style="text-align: center;">
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Image</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Created</th>
+                <th scope="col">Category</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody style="text-align: center;">
+              <% data.forEach((e, i) => { %>
+                <tr>
+                  <td><%= i+1 %></td>
+                  <td><img src="<%= e.urlPicture %>" alt="image of <%= e.name %>" style="width: 50px;"></td>
+                  <td style="text-align: left;"><%= e.name %></td>
+                  <td style="text-align: left;"><%= convert(e.createdAt) %></td>
+                  <td style="text-align: left;"><%= e.Category.name %></td>
+                  <td><%= e.stock %></td>
+                  <td>
+                    <a href="/admin/edit/<%= e.id %>" class="btn btn-primary">Edit</a>
+                    <a href="/admin/delete/<%= e.id %>" class="btn btn-danger">Delete</a>
+                  </td>
+                </tr>
+              <% }) %>
+            </tbody>
+          </table>
+    </div>
+    <%- include('_script') %>
+</body>
+</html>

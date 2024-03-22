@@ -1,0 +1,29 @@
+npx sequelize-cli model:generate --name Category --attributes name:string
+
+npx sequelize-cli model:generate --name User --attributes username:string,password:string,email:string,role:string
+
+npx sequelize-cli model:generate --name UserProfile --attributes fullName:string,profilePicture:text,UserId:integer,dateOfBirth:date
+
+npx sequelize-cli model:generate --name Product --attributes name:string,description:string,price:integer,CategoryId:integer,stock:integer,urlPicture:text
+
+npx sequelize-cli model:generate --name Cart --attributes UserId:integer,ProductId:integer
+
+
+
+
+npx sequelize seed:create --name "seedCategories"
+
+npx sequelize seed:create --name "seedUser"
+
+npx sequelize seed:create --name "userProfile"
+
+npx sequelize seed:create --name "product"
+
+npx sequelize seed:create --name "cart"
+
+
+npx sequelize migration:generate --name "addingNewColumnColumnId"
+
+
+
+

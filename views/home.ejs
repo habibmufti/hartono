@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('_link') %>
+    <title><%= title %></title>
+</head>
+<body>
+    <%- include('_nav') %>
+    <div class="container mt-3">
+        <%- include('_search') %>
+        <% data.forEach((el, i) => { %>
+            <% if (i % 2 == 0) { %>
+                <div class="row">
+                    <div class="col-sm-6 mb-4 mb-sm-0">
+                        <div class="card">
+                            <img class="card-img-top " src="<%= el.urlPicture %>" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= el.name %></h5>
+                                <p class="card-text"><%= el.description %></p>
+                                <p>Price: <%= el.formattedPrice %></p>
+                                <p>Stock: <%= el.stock %></p>
+                                <a href="/addToCart/<%= el.id %>" class="btn btn-success">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+            <% } else { %>
+                <div class="col-sm-6 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="<%= el.urlPicture %>" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= el.name %></h5>
+                            <p class="card-text"><%= el.description %></p>
+                            <p>Price: <%= el.formattedPrice %></p>
+                            <p>Stock: <%= el.stock %></p>
+                            <a href="/addToCart/<%= el.id %>" class="btn btn-success">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        <% }) %>
+    </div>
+    <%- include('_script') %>
+</body>
+</html>

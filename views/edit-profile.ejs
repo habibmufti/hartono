@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <%- include('_link') %>
+    </head>
+
+    <body>
+        <%- include('_nav') %>
+        <br>
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <h3>Edit Profile</h3>
+            </div>
+            <form class="row g-3 mb-3" action="/user/edit/profile/<%= profile.id %>" method="post">
+                <div>
+                    <label for="">Full Name</label>
+                    <input type="text" class="form-control" name="fullName" value="<%= profile.fullName %>">
+                </div>
+                <div>
+                    <label for="">Date Of Birth</label>
+                    <input type="date" class="form-control" name="dateOfBirth" value="<%= profile.formattedDate %>">
+                </div>
+                <div>
+                    <label for="">Profile Picture Url</label>
+                    <input type="text" class="form-control" name="profilePicture" value="<%= profile.profilePicture %>">
+                </div>
+                    <button type="submit" class="btn btn-primary">Edit Profile</button>
+                </div>
+            </form>
+    </body>
+
+</html>

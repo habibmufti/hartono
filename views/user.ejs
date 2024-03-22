@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('_link') %>
+    <title><%= title %></title>
+</head>
+<body>
+    <%- include('_nav') %>
+    <div class="container">
+        <h2 style="text-align: center;" class="my-3">User Details</h2>
+        <div class="d-flex justify-content-center">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="<%= user[0].dataValues.UserProfile.profilePicture %>" class="img-fluid rounded-start p-3" alt="profile picture">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title"> Hai,
+                        <%= user[0].dataValues.UserProfile.fullName %>!
+                      </h5>
+                      <p class="card-text">
+                        thank you for trusting our site
+                      </p>
+                      <a href="/user/edit/profile/<%= user[0].dataValues.UserProfile.id %>" class="btn btn-primary">Edit Profile</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h4 style="text-align: center;">scan me now!</h4>
+                <h6 style="text-align: center;">for discount up to 50%</h6>
+                <img src="<%= qrCodeURL %>" class="card-img-top" style="width: 300px;">
+              </div>
+              </div>
+        </div>
+    </div>
+
+    <%- include('_script') %>
+</body>
+</html>

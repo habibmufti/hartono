@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('_link') %>
+    <title><%= title %></title>
+</head>
+<body>
+    <%- include('_nav') %>
+    <div class="container">
+        <h2 class="my-3" style="text-align: center;">Welcome to Cart page</h2>
+        <h2 class="my-3" style="text-align: center;">Unpaid</h2>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Image</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+                <th scope="col">Total Price</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% cartUnpaid.forEach((e, i) => { %>
+                <tr>
+                  <td><%= i+1 %></td>
+                  <td><img src="<%= e.Product.urlPicture %>" alt="image of <%= e.Product.name %>" style="width: 50px;"></td>
+                  <td><%= e.Product.name %></td>
+                  <td><%= e.quantity %></td>
+                  <td><%= formatCurrency(e.Product.price) %></td>
+                  <td><%= formatCurrency(e.quantity * e.Product.price) %></td>
+                  <td>
+                    <a href="/cart/increase/<%= e.id %>" class="btn btn-primary">QTY +</a>
+                    <a href="/cart/decrease/<%= e.id %>" class="btn btn-danger">QTY -</a>
+                    <a href="/cart/pay/<%= e.id %>?qty=<%= e.quantity %>&productId=<%= e.Product.id %>" class="btn btn-danger">Pay</a>
+                  </td>
+                </tr>
+              <% }) %>
+            </tbody>
+          </table>
+          <h2 class="my-3" style="text-align: center;">Transaction History</h2>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Image</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+                <th scope="col">Total Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% cartPaid.forEach((e, i) => { %>
+                <tr>
+                  <td><%= i+1 %></td>
+                  <td><img src="<%= e.Product.urlPicture %>" alt="image of <%= e.Product.name %>" style="width: 50px;"></td>
+                  <td><%= e.Product.name %></td>
+                  <td><%= e.quantity %></td>
+                  <td><%= formatCurrency(e.Product.price) %></td>
+                  <td><%= formatCurrency(e.quantity * e.Product.price) %></td>
+                </tr>
+              <% }) %>
+            </tbody>
+          </table>
+    </div>
+    <%- include('_script') %>
+</body>
+</html>

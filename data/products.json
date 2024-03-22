@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Samsung Galaxy S21",
+    "description": "Flagship smartphone with powerful features.",
+    "price": 12000000,
+    "CategoryId": 1,
+    "stock": 50,
+    "urlPicture": "https://cdn.dxomark.com/wp-content/uploads/medias/post-74826/SamsungGalaxys215g.jpg"
+  },
+  {
+    "name": "iPhone 13 Pro",
+    "description": "Premium smartphone with iOS ecosystem.",
+    "price": 15000000,
+    "CategoryId": 1,
+    "stock": 30,
+    "urlPicture": "https://cdn.dxomark.com/wp-content/uploads/medias/post-94778/Apple-iPhone-13-Pro-featured-image-packshot-review-1024x691.jpg"
+  },
+  {
+    "name": "MacBook Pro 2022",
+    "description": "High-performance laptop for professionals.",
+    "price": 25000000,
+    "CategoryId": 2,
+    "stock": 20,
+    "urlPicture": "https://cdn.dxomark.com/wp-content/uploads/medias/post-154546/Apple-MacBook-Pro-14_-2023_featured-image-packshot-review-Recovered-Recovered.jpg"
+  },
+  {
+    "name": "Dell XPS 15",
+    "description": "Sleek and powerful laptop for creators.",
+    "price": 18000000,
+    "CategoryId": 2,
+    "stock": 15,
+    "urlPicture": "https://www.dxomark.com/wp-content/uploads/medias/post-156058/Dell-7340-2in1_featured-image-packshot-review.jpg"
+  },
+  {
+    "name": "LG OLED C1",
+    "description": "Stunning 4K OLED TV for immersive viewing experience.",
+    "price": 20000000,
+    "CategoryId": 3,
+    "stock": 10,
+    "urlPicture": "https://www.lg.com/content/dam/channel/wcms/id/images/tv/oled48c1ptb_ati_eain_id_c/gallery/dm-1.jpg"
+  },
+  {
+    "name": "Sony Bravia A90J",
+    "description": "Premium 4K HDR TV with impressive picture quality.",
+    "price": 22000000,
+    "CategoryId": 3,
+    "stock": 8,
+    "urlPicture": "https://www.sony.ca/image/adafa290cb9f8378fcb0e41f62584eb6?fmt=pjpeg&wid=1014&hei=396&bgcolor=F1F5F9&bgc=F1F5F9"
+  },
+  {
+    "name": "Xiaomi Redmi Note 11",
+    "description": "Affordable smartphone with decent performance.",
+    "price": 4000000,
+    "CategoryId": 1,
+    "stock": 60,
+    "urlPicture": "https://cdn.dxomark.com/wp-content/uploads/medias/post-111664/Xiaomi-Redmi-Note-11_-featured-image-packshot-review-Recovered-Recovered.jpg"
+  },
+  {
+    "name": "Asus ROG Zephyrus G14",
+    "description": "Gaming laptop with powerful specs in a compact form factor.",
+    "price": 22000000,
+    "CategoryId": 2,
+    "stock": 12,
+    "urlPicture": "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//102/MTA-26658255/asus_asus_rog_zephyrus_g14_14--amd_r7-8gb-512gb_-_-ga401qh-r765b6t-o-_full01_eq8b52cc.jpg"
+  },
+  {
+    "name": "Samsung QN90A Neo QLED",
+    "description": "Top-of-the-line QLED TV with stunning visuals.",
+    "price": 30000000,
+    "CategoryId": 3,
+    "stock": 5,
+    "urlPicture": "https://images.samsung.com/is/image/samsung/p6pim/id/qa98qn90aakxxd/gallery/id-neo-qled-qn90a-384052-qa98qn90aakxxd-523922451?$720_576_JPG$"
+  },
+  {
+    "name": "Lenovo Legion 5",
+    "description": "Budget-friendly gaming laptop with solid performance.",
+    "price": 12000000,
+    "CategoryId": 2,
+    "stock": 18,
+    "urlPicture": "https://els.id/wp-content/uploads/2023/09/Legion-5-Storm-Grey.png"
+  }
+]

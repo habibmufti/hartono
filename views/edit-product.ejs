@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <%- include('_link') %>
+    </head>
+
+    <body>
+        <%- include('_nav') %>
+        <br>
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <h3>Edit Product</h3>
+            </div>
+            <form class="row g-3 mb-3" action="/admin/edit/<%= product.id %>" method="post">
+
+                <div>
+                    <label for="">Product Name</label>
+                    <input type="text" class="form-control" name="name" value="<%= product.name %>">
+                    <% if (path) { %>
+                        <% const index = path.split(",").findIndex((el) => el === 'name') %>
+                        <div class="form-text" style="color: red;"><%= error.split(",")[index] %></div>
+                   <% } %>
+                </div>
+                <div class="col-sm">
+                    <label for="">Price</label>
+                    <input type="number" class="form-control" name="price" value="<%= product.price %>">
+                    <% if (path) { %>
+                        <% const index = path.split(",").findIndex((el) => el === 'price') %>
+                        <div class="form-text" style="color: red;"><%= error.split(",")[index] %></div>
+                   <% } %>
+                </div>
+                <div class="col-sm">
+                    <label for="">Quantity</label>
+                    <input type="number" class="form-control" name="stock" value="<%= product.stock %>">
+                    <% if (path) { %>
+                        <% const index = path.split(",").findIndex((el) => el === 'stock') %>
+                        <div class="form-text" style="color: red;"><%= error.split(",")[index] %></div>
+                   <% } %>
+                </div>
+                <div>
+                    <label for="">Category</label>
+                    <select class="form-select" name="CategoryId">
+                        <option selected value="">Set Category</option>
+                        <% category.forEach((e, i) => { %>
+                            <% if (e.id == product.CategoryId) { %>
+                                <option value="<%= e.id %>" selected><%= e.name %></option>
+                            <% } else { %>
+                                <option value="<%= e.id %>"><%= e.name %></option>
+                            <% } %> 
+                        <% }) %>
+                    </select>
+                </div>
+                <div>
+                    <label for="">Product Photo Url</label>
+                    <input type="text" class="form-control" name="urlPicture" value="<%= product.urlPicture %>">
+                    <% if (path) { %>
+                        <% const index = path.split(",").findIndex((el) => el === 'urlPicture') %>
+                        <div class="form-text" style="color: red;"><%= error.split(",")[index] %></div>
+                   <% } %>
+                </div>
+                <div>
+                <div class="mb-3">
+                    <label for="">Product Description</label>
+                    <textarea class="form-control" rows="3"  name="description"><%= product.description %></textarea>
+                    <% if (path) { %>
+                        <% const index = path.split(",").findIndex((el) => el === 'description') %>
+                        <div class="form-text" style="color: red;"><%= error.split(",")[index] %></div>
+                   <% } %>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary">Edit Product</button>
+                </div>
+            </form>
+    </body>
+
+</html>

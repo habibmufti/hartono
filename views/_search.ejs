@@ -1,0 +1,17 @@
+<form class="row g-3 mb-3" action="/" method="get">
+    <div class="col-sm-7">
+        <input type="text" class="form-control" placeholder="Search By Product Name" name="name">
+    </div>
+    <div class="col-sm">
+        <select class="form-select" name="CategoryId">
+            <option selected value="">Set Category</option>
+            <% ['Handphone', 'Laptop', 'TV'].forEach((e, i) => { %>
+                <option value="<%= i+1 %>"><%= e %></option>
+            <% }) %>
+        </select>
+        <!-- <input type="text" class="form-control" placeholder="or By Artist" name="CategoryId"> -->
+    </div>
+    <div class="col-sm-1">
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+</form>
